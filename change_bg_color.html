@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change_Bg</title>
+</head>
+
+<body>
+    <style>
+       :root{
+    --glow-color:hsl(186 100% 69%);
+    }
+    div{
+        margin: 180px ;
+        position: fixed;
+    }
+    .glowing-btn{
+    position: relative;
+    color: var(--glow-color);
+    cursor: pointer;
+    padding: 0.35em 1em;
+    border: 0.15em solid var(--glow-color);
+    border-radius: 0.45em;
+    background: none;
+    perspective: 2em;
+    font-family: "Raleway", sans-serif;
+    font-size: 2em;
+    font-weight: 900;
+    letter-spacing: 1em;
+}
+.faulty-letter{
+    -webkit-box-reflect : below 1px linear-gradient(transparent , #0004);
+	line-height: 0.70em;
+    animation: animate 2.5s linear infinite;
+}
+.glowing-text{
+    -webkit-box-reflect : below 1px linear-gradient(transparent , #0004);
+	line-height: 0.70em;
+    animation: animate1 1s linear infinite;
+}
+.glowing-btn:hover{
+    background: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4,
+    0 0 25px #03e9f4,
+    0 0 50px #03e9f4,
+    0 0 200px #03e9f4;
+    
+}
+@keyframes animate{
+	0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%{
+		color: #0e3742;
+		text-shadow: none;
+	}
+	18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
+		color: #fff;
+		text-shadow: 0 0 10px #03bcf4,
+		            0 0 20px #03bcf4,
+		            0 0 40px #03bcf4,
+		            0 0 80px #03bcf4,
+		            0 0 160px #03bcf4;
+
+	}
+}
+@keyframes animate1{
+	0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%{
+		color: #0e3742;
+		text-shadow: none;
+	}
+	18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
+		color: #fff;
+		text-shadow: 0 0 10px #03bcf4,
+		            0 0 20px #03bcf4,
+		            0 0 40px #03bcf4,
+		            0 0 80px #03bcf4,
+		            0 0 160px #03bcf4;
+
+	}
+}
+    </style>
+    <div class="container">
+        <button class="glowing-btn">
+            <span class="glowing-text">
+                CHANGE <span class="faulty-letter">BG</span> 
+            </span>
+        </button>
+    </div>
+    
+    <script>
+        const button = document.querySelector("button");
+
+        const changeBg = () => {
+            const hexVal = Math.floor(Math.random() * 0xffffff).toString(16);
+            document.body.style.background = `#${hexVal}`;
+        }
+        button.addEventListener("click", changeBg);
+    </script>
+</body>
+
+</html>

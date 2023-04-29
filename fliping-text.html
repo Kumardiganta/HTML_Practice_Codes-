@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: 14vw;
+            text-align: center;
+            color: #fff;
+            /*text-shadow: 0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #0fa,
+            0 0 82px #0fa,
+            0 0 92px #0fa,
+            0 0 102px #0fa,
+            0 0 151px #0fa;
+            */
+        }
+        .flipingtext span{
+            color: green;
+            /*
+            animation: flicker 1.5s infinite alternate;
+            */
+        }
+        /*@keyframes flicker{
+            0%, 18%, 22%, 25%, 53%, 57%, 100%{
+                text-shadow: 
+                0 0 4px #fff,
+                0 0 11px #fff,
+                0 0 19px #fff,
+                0 0 40px #0fa,
+                0 0 80px #0fa,
+                0 0 90px #0fa,
+                0 0 1000px #0fa,
+                0 0 150px #0fa;
+            }
+            20%, 24%, 55%{
+                text-shadow: none;
+            }
+        }*/
+        .flipingtext{
+            display: flex;
+            justify-content: center;
+        }
+        .flipingtext>span{
+            display: inline-block;
+            animation: flip 2s infinite;
+            animation-delay: calc(0.2s * var(--x));
+        }
+        @keyframes flip{
+            0%,
+            80%{
+                transform: rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flipingtext">
+        <span style="--x:1">F</span>
+        <span style="--x:2">L</span>
+        <span style="--x:3">I</span>
+        <span style="--x:4">P</span>
+        <span style="--x:5">I</span>
+        <span style="--x:6">N</span>
+        <span style="--x:7">G</span>
+    </div>
+</body>
+</html>

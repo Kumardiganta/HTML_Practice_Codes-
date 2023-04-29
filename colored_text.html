@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coloured_Text</title>
+</head>
+<body>
+    <style>
+        *{
+            background-color: #ebdada;
+        }
+        div{
+            margin: 100px;
+            text-align: center;
+            font-size: 70px;
+            font-weight: bold;
+        }
+        input{
+            padding: 15px;
+            margin-left: 220px;
+            border: 2px dashed black;
+            border-radius: 15px;
+        }
+    </style>
+    <div>HELLO...!</div>
+    <input type="text">
+    <script>
+        let text = document.querySelector("div"),
+        input = document.querySelector("input");
+
+        input.addEventListener("input", () => {
+            text.style.color = input.value;
+            text.style.fontSize = input.value;
+        });
+    </script>
+</body>
+</html>
